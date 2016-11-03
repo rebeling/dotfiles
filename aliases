@@ -1,0 +1,67 @@
+
+# see https://github.com/robbyrussell/oh-my-zsh/wiki/Cheatsheet
+
+ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/sublime
+
+alias s2="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
+alias s="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+
+# OPEN LOCAL FILES & FOLDERS -------------------------------------------
+alias z="s $HOME/.zshrc"
+alias za="s $HOME/.aliases"
+alias zu="s alias"
+alias fn="s $HOME/.oh-my-zsh/lib/functions.zsh"
+
+alias o="open ."
+alias snippets="s $HOME/Library/Application\ Support/Sublime\ Text\ 3/Packages/Python/Snippets"
+alias p="cd $HOME/rtr"
+alias gi="cd $HOME/github"
+alias myssh="s $HOME/.ssh/config"
+alias cv="cd $HOME/Documents/cv-boilerplate && s ."
+alias ra="cd $HOME/Documents/ramlficated-api"
+
+# CHROME ---------------------------------------------------------------
+alias chrome="open -a Google\ Chrome --args --disable-web-security"
+
+# VPN ------------------------------------------------------------------
+alias tinc='sudo /usr/local/Cellar/tinc/1.0.28/sbin/tincd -c /Users/rebel/Documents/tinc/mesosvpn --pidfile /Users/rebel/Documents/tinc/var/tinc.pid'
+
+# BREW -----------------------------------------------------------------
+# refresh brew by upgrading all outdated casks
+# alias brewrefresh='brew outdated | while read cask; do brew upgrade $cask; done'
+alias bd='brew doctor'
+alias bu='brew update'
+
+# PYPI -----------------------------------------------------------------
+alias add_to_pypi="python setup.py register -r pypitest && python setup.py sdist upload -r pypitest && python setup.py register -r pypi && python setup.py sdist upload -r pypi"
+
+# DOCKER ---------------------------------------------------------------
+alias di="docker images"
+alias dc="docker ps -a"
+## One liner to stop / remove all of Docker containers:
+alias drmc='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
+alias dstop="docker stop $(docker ps -a -q)"
+alias drmi='docker rmi $(docker images -q)'
+
+# 
+# alias requirements="echo 'check requirements against python verion: checkmyreqs -p 3.3'"
+# 
+# ES -------------------------------------------------------------------
+alias es23="$HOME/Documents/elasticsearch-2.3.0/bin/elasticsearch"
+alias es21="$HOME/Documents/elasticsearch-2.1.1/bin/elasticsearch"
+alias es17="$HOME/Documents/elasticsearch-1.7.5/bin/elasticsearch"
+alias kiba="$HOME/Documents/kibana-4.5.0-darwin-x64/bin/kibana"
+
+# GIT ------------------------------------------------------------------
+alias gnt='function newtag(){ git tag $1; git push --tags };newtag'
+
+alias flow='echo "$ git checkout develop\n$ git merge --no-ff myfeature\n$ git branch -d myfeature\n$ git push origin develop"'
+
+alias gs='git status'
+alias gba='git branch -a'
+alias gp='git push'
+alias gt='git tag'
+alias gpt='git push --tags'
+alias ga='git add'
+alias gm='git commit -m'
+alias gl="git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short"
